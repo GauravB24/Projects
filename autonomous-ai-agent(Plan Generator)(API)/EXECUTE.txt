@@ -1,0 +1,66 @@
+Running the Project
+1. Open the project
+cd C:\Users\twent\OneDrive\Desktop\autonomous-ai-agent
+2. Activate the virtual environment
+venv\Scripts\activate
+
+If it's activated successfully, you should see (venv) at the beginning of the terminal.
+
+3. Install dependencies (only if needed)
+
+If you're running the project for the first time or have deleted the virtual environment:
+
+pip install -r requirements.txt
+
+Otherwise, you can skip this step.
+
+4. Check the .env file
+
+Make sure the project root contains a .env file with your Gemini API key.
+
+GEMINI_API_KEY=your_api_key
+5. Start the API
+uvicorn app.main:app --reload
+
+If everything starts correctly, you'll see the server running on:
+
+http://127.0.0.1:8000
+6. Open Swagger
+
+Open the following URL in your browser:
+
+http://127.0.0.1:8000/docs
+7. Test the API
+
+Open POST /agent
+
+Click Try it out
+
+Replace the request body with something like:
+
+{
+    "request": "Create a project proposal for an AI chatbot."
+}
+
+or
+
+{
+    "request": "Plan a list of things to do while visiting Himachal Pradesh."
+}
+
+Click Execute.
+
+8. Check the output
+
+If the request is successful, the generated Word document will be available in the output folder.
+
+Example:
+
+output/generated_document_YYYYMMDD_HHMMSS.docx
+9. Stop the server
+
+Press:
+
+Ctrl + C
+10. Exit the virtual environment (optional)
+deactivate
